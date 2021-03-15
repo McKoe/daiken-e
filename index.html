@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Daiken Electric</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="electric.css">
+  </head>
+  <body>
+    <div class="top">
+    </div>
+
+    <div class="logo">
+      <div class="vertical-center-flex">
+        <div class="left">
+          <img src="daiken-e.svg" class="centerimg">
+        </div>
+        <div class="middle">
+          <svg width="1.6" height="62"><rect width="1.6" height="62" fill="#77a612"/></svg>
+        </div>
+        <div class="right">
+          <p>RECARGA DE VEÍCULOS ELÉTRICOS EM CONDOMÍNIOS</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="content" style="background-image: url('garage.jpg');">
+      <div id="launch">
+      </div>
+
+      <div class="xycentered">
+        <button id="myBtn" class="botao">Fique por dentro</button>
+      </div>
+
+    </div>
+
+    <div class="foot">
+      <p><a href="mailto:contato@daikenelectric.com.br">contato@daikenelectric.com.br</a></p>
+    </div>
+
+    <script>
+    var i = 0;
+    var txt = 'LANÇAMENTO: JULHO/2021';
+
+    function typeWriter() {
+      if (i < txt.length) {
+        document.getElementById("launch").innerHTML += txt.charAt(i);
+        i++;
+        if (i == 12) setTimeout(typeWriter, 1300);
+        else setTimeout(typeWriter, 80);
+      }
+    }
+    setTimeout(typeWriter, 2000);
+    </script>
+
+
+    <!-- The Modal -->
+
+    <!-- Modal Background -->
+    <div id="acortina" class="cortina"></div>
+
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div id="mcontent" class="modal-content">
+        <div class="modal-header">
+          <span class="close1">&times;</span>
+          <h3>Cadastro</h3>
+        </div>
+        <div class="modal-body">
+          <form id="theform" target="dummyframe" class="test" name="contato" method="POST" data-netlify="true">
+            <p>
+              Seja o primeiro a receber informações sobre o nosso sistema de
+              recarga de carros elétricos para condomínios:
+            </p>
+            <p>
+              <input type="text" name="nome" maxlength="40" placeholder="Seu nome"/>
+            </p>
+            <p>
+              <input type="text" name="info" maxlength="120" placeholder="Celular ou e-mail"/>
+            </p>
+            <p>
+              <input type="text" name="condo" maxlength="40" placeholder="Condomínio"/>
+            </p>
+            <p>
+              <input type="text" name="cidade" maxlength="40" placeholder="Cidade"/>
+            </p>
+            <div class="posbutton">
+              <button class="modalbutton" type="submit" onclick="thankyou()">Enviar</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <h3></h3>
+        </div>
+      </div>
+
+      <!-- Modal content -->
+      <div id="mthanks" class="modal-thanks">
+        <div class="modal-header">
+          <span class="close2">&times;</span>
+          <h3>Obrigado</h3>
+        </div>
+        <div class="modal-body">
+          <p>Suas informações foram enviadas com sucesso.</p>
+        </div>
+        <div class="modal-footer">
+          <h3>
+          </h3>
+        </div>
+      </div>
+
+    </div>
+    <iframe name="dummyframe" id="dummyframe"></iframe>
+    <script src="electricscript.js"></script>
+
+  </body>
+</html>
